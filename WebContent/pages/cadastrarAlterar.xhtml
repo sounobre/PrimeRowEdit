@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+ <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+		
+	
+	<ui:composition template= "template.xhtml">
+	
+	
+
+  
+	
+	<ui:define name="conteudo">
+	    
+
+				
+			<h:form id="formproduto">
+				<h:panelGrid columns="2" >
+					<h:outputText  value="Nome: " />
+					<p:inputText value="#{pBean.produto.nome}"  style="inputtext"/>
+					
+					<h:outputText value="Preço: " />
+					<p:spinner value="#{pBean.produto.preco}" />
+					
+					<h:outputText value="Fornecedor: " />
+					<p:inputText value="#{pBean.produto.fornecedor}" />
+					
+					<h:outputText value="Categoria: " />
+					<p:inputText value="#{pBean.produto.categoria}"  />
+					
+				</h:panelGrid>
+				<p:commandButton value="CADASTRAR" action="#{pBean.cadastrar}" update="formproduto"></p:commandButton>
+				<p:messages />
+			</h:form>
+		
+	    
+	    
+	    
+	</ui:define>
+	
+</ui:composition>
+
+</html>
